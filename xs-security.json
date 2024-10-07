@@ -1,0 +1,7 @@
+{
+  "xsappname": "democomzlistreport2git",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [],
+  "role-templates": []
+}
