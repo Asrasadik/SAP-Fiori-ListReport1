@@ -1,0 +1,33 @@
+<Dialog xmlns="sap.m" title="{i18n>productDetailTitle}" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" id="idInsDialog" contentWidth="30%">
+	<content width="80%">
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+			<VBox>
+				<Label text="{i18n>productName}"/>
+				<Input value="{prdSelectedDataModel>/ProductName}({prdSelectedDataModel>/ProductID})" id="idRcNumber1" editable="false" />
+			</VBox>
+			<VBox>
+				<Label text="{i18n>qtyPerUnit}"/>
+				<Input value="{prdSelectedDataModel>/QuantityPerUnit}" id="idRcNumber2" editable="false" />
+			</VBox>
+			<VBox>
+				<Label text="{i18n>supplierId}"/>
+				<Input value="{prdSelectedDataModel>/SupplierID}" id="idRcNumber3" editable="false" />
+			</VBox>
+			<VBox>
+				<Label text="{i18n>unitPrice}"/>
+				<HBox alignItems="Start" justifyContent="Start">
+					<StepInput id="idPrdQty" step="0.05" value="{prdSelectedDataModel>/UnitPrice}" displayValuePrecision="3" />
+					<Input id="idPrdUom" class="sapUiTinyMarginBegin"
+						value="{prdSelectedDataModel>/UnitsInStock}" editable="false"
+						/>
+				</HBox>
+			</VBox>
+
+		</l:VerticalLayout>
+	</content>
+	<buttons class="sapUiLargeMarginTop">
+		<Button id="idInspSave" text="{i18n>Save}" press="onSaveInspectRc" type="Accept"/>
+		<Button text="{i18n>Cancel}" press="onInspectRcCancel"/>
+	</buttons>
+</Dialog>
